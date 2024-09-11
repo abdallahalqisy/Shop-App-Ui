@@ -28,10 +28,21 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
+  build_runner: ^2.4.12
   cupertino_icons: ^1.0.8
+  dio: ^5.6.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_native_splash: ^2.4.1
+  get_it: ^7.7.0
+  json_annotation: ^4.9.0
+  json_serializable: ^6.8.0
+  redacted: ^1.0.12
+  retrofit: ^4.2.0
+  retrofit_generator: ^8.2.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

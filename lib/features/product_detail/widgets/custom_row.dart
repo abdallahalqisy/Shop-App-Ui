@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/product_detail/widgets/horizantel_line.dart';
+import 'horizantel_line.dart';
 
 class customRow extends StatefulWidget {
   final IconData icon;
@@ -30,11 +30,11 @@ class _CustomRowState extends State<customRow> {
         children: [
           Row(
             children: [
-              Text(
+              const Text(
                 'Natural Red Apple',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
                 onPressed: _toggleExpand,
                 icon: Icon(

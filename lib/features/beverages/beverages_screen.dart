@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/beverages/widgets/app_bar_beverages.dart';
-import 'package:shopapp/features/beverages/widgets/custom_cart_in_beverages_screen.dart';
+import 'widgets/app_bar_beverages.dart';
+import 'widgets/custom_cart_in_beverages_screen.dart';
 
 class BeveragesScreen extends StatelessWidget {
   const BeveragesScreen({super.key});

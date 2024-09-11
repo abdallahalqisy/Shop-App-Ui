@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/onbording/widgets/bottom.dart';
-import 'package:shopapp/features/product_detail/widgets/continer_product_daitails.dart';
-import 'package:shopapp/features/product_detail/widgets/custom_row.dart';
-import 'package:shopapp/features/product_detail/widgets/horizantel_line.dart';
-import 'package:shopapp/features/product_detail/widgets/row_add_and_minus.dart';
+import '../../core/util/product.dart';
+import '../onbording/widgets/bottom.dart';
+import 'widgets/continer_product_daitails.dart';
+import 'widgets/custom_row.dart';
+import 'widgets/horizantel_line.dart';
+import 'widgets/row_add_and_minus.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({
+    super.key,
+    required Character product,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class ProductDetailsScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(left: 15),
             child: Row(
-              children: [Text('1kg , price')],
+              children: [Text(' price')],
             ),
           ),
           const SizedBox(

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/home/ui/home_screan.dart';
-import 'package:shopapp/features/onbording/widgets/bottom.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../core/util/injection.dart';
+import '../../core/util/my_repo.dart';
+import '../../core/util/web_service.dart';
+import '../../cubit/my_cubit.dart';
+import '../home/ui/home_screan.dart';
+import 'widgets/bottom.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -50,7 +55,11 @@ class OnboardingScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeScrean(),
+                      builder: (context) => BlocProvider(
+                        create: (BuildContext context) => CharactersCubit(
+                            CharacterRepo(CharactersWebServices())),
+                        child: HomeScrean(),
+                      ),
                     ),
                   );
                 },

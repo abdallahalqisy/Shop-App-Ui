@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/cart/card_screen.dart';
+import '../../../cart/card_screen.dart';
 
+// ignore: camel_case_types
 class textHomeScreen extends StatelessWidget {
   final String text;
   const textHomeScreen({
@@ -16,7 +17,7 @@ class textHomeScreen extends StatelessWidget {
         children: [
           Text(
             text,
-            style: TextStyle(fontWeight: FontWeight.w600),
+            style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           const Spacer(),
           TextButton(

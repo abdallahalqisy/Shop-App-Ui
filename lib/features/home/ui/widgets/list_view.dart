@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/product_detail/product_details.dart';
+import 'package:redacted/redacted.dart';
+import '../../../../core/util/product.dart';
 
-class ListViewProduct extends StatelessWidget {
-  const ListViewProduct({
-    super.key,
-  });
+import '../../../product_detail/product_details.dart';
 
+// ignore: must_be_immutable
+class ListViewProduct extends StatefulWidget {
+  late List<Character> character;
+
+  ListViewProduct({super.key, required this.character});
+
+  @override
+  State<ListViewProduct> createState() => _ListViewProductState();
+}
+
+class _ListViewProductState extends State<ListViewProduct> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,8 +23,9 @@ class ListViewProduct extends StatelessWidget {
         height: 210, // Specify a fixed height
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 10,
+          itemCount: widget.character.length,
           itemBuilder: (context, index) {
+            final character = widget.character[index];
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
@@ -23,7 +33,9 @@ class ListViewProduct extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ProductDetailsScreen(),
+                      builder: (context) => ProductDetailsScreen(
+                        product: character,
+                      ),
                     ),
                   );
                 },
@@ -33,28 +45,32 @@ class ListViewProduct extends StatelessWidget {
                     color: Colors.white,
                     border: Border.all(color: Colors.grey),
                   ),
-                  height: 200,
+                  height: 220,
                   width: 150,
                   child: Column(
                     children: [
-                      Image.asset(
-                        'assets/images/moz.png',
-                        width: 48,
-                        height: 56,
-                      ),
-                      const ListTile(
-                        title: Text(
-                          'Organic pananas',
-                          style: TextStyle(fontSize: 13),
+                      SizedBox(
+                        height: 90, // Set a fixed height for the image
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Image(image: NetworkImage(character.image)),
                         ),
-                        subtitle: Text('1 kg, Priceg'),
+                      ),
+                      ListTile(
+                        title: Text(
+                          maxLines: 1,
+                          character.title,
+                          style: const TextStyle(fontSize: 13),
+                        ),
+                        // subtitle: Text('${character.price}'),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            top: 10, left: 13, bottom: 10, right: 10),
+                            top: 0, left: 13, bottom: 0, right: 10),
                         child: Row(
                           children: [
-                            const Text('\$4.5'),
+                            Text('\$${character.price}'),
                             const Spacer(),
                             Container(
                               height: 40,
@@ -68,6 +84,13 @@ class ListViewProduct extends StatelessWidget {
                         ),
                       )
                     ],
+                  ),
+                ).redacted(
+                  context: context,
+                  redact: false,
+                  configuration: RedactedConfiguration(
+                    animationDuration:
+                        const Duration(milliseconds: 1000), //default
                   ),
                 ),
               ),

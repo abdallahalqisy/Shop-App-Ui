@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/beverages/beverages_screen.dart';
+import '../../../beverages/beverages_screen.dart';
 
 class ListViewProduct2 extends StatelessWidget {
   const ListViewProduct2({

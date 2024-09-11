@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/filters/filters_screen.dart';
+import '../../filters/filters_screen.dart';
 
 class AppBarBeveragesScreen extends StatelessWidget {
   const AppBarBeveragesScreen({

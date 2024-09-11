@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/features/explore/widgets/card.dart';
-import 'package:shopapp/features/home/ui/widgets/nav_bar.dart';
-import 'package:shopapp/features/home/ui/widgets/text_faild.dart';
+import 'widgets/card.dart';
+import '../home/ui/widgets/nav_bar.dart';
+import '../home/ui/widgets/text_faild.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});

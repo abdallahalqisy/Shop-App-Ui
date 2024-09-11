@@ -10,7 +10,7 @@ class SeleBanner extends StatelessWidget {
     // List of banner image paths
     final List<String> bannerImages = [
       'assets/images/banner.png',
-      'assets/images/banner.png', 'assets/images/banner.png',
+      'assets/images/welcombanner.jpeg', 'assets/images/banner.png',
       // Add more banner image paths here
     ];
 
